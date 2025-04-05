@@ -32,5 +32,5 @@ jobs:
           else
             git add .
             git commit -m "Auto-generated README files"
-            git push "https://${{PERSONAL_ACCESS_TOKEN}}@github.com/${{ github.repository }}.git" main
+            git push "https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git" main
           fi
