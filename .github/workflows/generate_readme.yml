@@ -11,7 +11,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+        
+      - name: Setup SSH Key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
       - name: 初始化 Python
         uses: actions/setup-python@v4
         with:
@@ -20,10 +25,8 @@ jobs:
       - name: 开始生成readme
         run: |
           python auto.py
-
+      
       - name: 提交更改到仓库
-        env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -32,5 +35,5 @@ jobs:
           else
             git add .
             git commit -m "Auto-generated README files"
-            git push "https://${PERSONAL_ACCESS_TOKEN}@github.com/${{ github.repository }}.git" main
+            git push origin main
           fi
