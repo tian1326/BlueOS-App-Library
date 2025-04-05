@@ -21,6 +21,12 @@ jobs:
         run: |
           python auto.py
 
+      - name: 测试 PERSONAL_ACCESS_TOKEN 的有效性
+        run: |
+          curl -H "Authorization: token $PERSONAL_ACCESS_TOKEN" https://api.github.com/user
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
       - name: 提交更改到仓库
         env:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
