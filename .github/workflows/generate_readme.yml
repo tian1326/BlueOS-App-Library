@@ -35,5 +35,6 @@ jobs:
           else
             git add .
             git commit -m "Auto-generated README files"
+            git remote set-url origin git@github.com:${{ github.repository }}.git
             git push origin main
           fi
