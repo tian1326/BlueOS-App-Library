@@ -1,0 +1,40 @@
+name: 生成readme
+
+on:
+  # 在推送代码到主分支时触发
+  push:
+    branches:
+      - main
+  # 手动触发
+  workflow_dispatch:
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 初始化 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 开始生成readme
+        run: |
+          python auto.py
+
+      - name: 提交更改到仓库
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if [[ -z $(git status --porcelain) ]]; then
+            echo "No changes to commit."
+          else
+            git add .
+            git commit -m "Auto-generated README files"
+            git push origin main
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
