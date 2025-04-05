@@ -30,7 +30,8 @@ jobs:
           else
             git add .
             git commit -m "Auto-generated README files"
-            git push origin main
+            # 使用 Personal Access Token 推送
+            git push https://$PERSONAL_ACCESS_TOKEN@github.com/${{ github.repository }}.git main
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.TOKEN }}
