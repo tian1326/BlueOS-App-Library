@@ -11,15 +11,65 @@
 ### ATRI(@澪-圆表版).rpk <a name="ATRI(@澪-圆表版)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/娱乐类/ATRI(@澪-圆表版).rpk)
 
+**屏幕类型**: 圆屏
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### ATRI(@澪-方表版).rpk <a name="ATRI(@澪-方表版)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/娱乐类/ATRI(@澪-方表版).rpk)
+
+**屏幕类型**: 方屏
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
 
 ### 像素鸟1.0.0.rpk <a name="像素鸟1.0.0"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/娱乐类/像素鸟1.0.0.rpk)
 
+**屏幕类型**: 未知
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### 电子木鱼1.0.7.rpk <a name="电子木鱼1.0.7"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/娱乐类/电子木鱼1.0.7.rpk)
 
+**屏幕类型**: 未知
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### 骰子1.0.rpk <a name="骰子1.0"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/娱乐类/骰子1.0.rpk)
+
+**屏幕类型**: 未知
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
 

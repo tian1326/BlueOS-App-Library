@@ -11,15 +11,65 @@
 ### 初音表盘.rpk <a name="初音表盘"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/初音表盘.rpk)
 
+**屏幕类型**: 未知
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### 多彩初音(圆表专属).rpk <a name="多彩初音(圆表专属)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/多彩初音(圆表专属).rpk)
+
+**屏幕类型**: 圆屏
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
 
 ### 彩球悦动·动态表盘.rpk <a name="彩球悦动·动态表盘"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/彩球悦动·动态表盘.rpk)
 
+**屏幕类型**: 未知
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### 米塔(方表).rpk <a name="米塔(方表)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/米塔(方表).rpk)
 
+**屏幕类型**: 方屏
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
+
 ### 逍遥云间(李素裳-方表).rpk <a name="逍遥云间(李素裳-方表)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/逍遥云间(李素裳-方表).rpk)
+
+**屏幕类型**: 方屏
+
+**已验证设备**: 未知
+
+**作者**: 未知
+
+**赞助图片地址**: 无
+
+**效果图地址**: 无
 

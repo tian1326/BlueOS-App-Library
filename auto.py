@@ -1,5 +1,6 @@
 import os
 import re
+import json
 import shutil
 
 def generate_readme(rpk_directory, readme_path, title, main_readme_link):
@@ -9,7 +10,7 @@ def generate_readme(rpk_directory, readme_path, title, main_readme_link):
     # 获取指定目录下的所有.rpk文件
     rpk_files = [f for f in os.listdir(rpk_directory) if f.endswith('.rpk')]
     
-    # 生成README内容
+        # 生成README内容
     try:
         with open(readme_path, 'w', encoding='utf-8') as readme_file:
             readme_file.write(f"# {title} [返回主目录]({main_readme_link})\n\n")
@@ -17,16 +18,59 @@ def generate_readme(rpk_directory, readme_path, title, main_readme_link):
             
             for rpk_file in rpk_files:
                 file_name = os.path.splitext(rpk_file)[0]
+                json_path = os.path.join(script_dir, "docs", os.path.relpath(rpk_directory, script_dir), f"{file_name}.json")
+                
+                if os.path.exists(json_path):
+                    with open(json_path, 'r', encoding='utf-8') as json_file:
+                        json_data = json.load(json_file)
+                        software_name = json_data.get("software_name", file_name)
+                        screen_type = json_data.get("screen_type", "未知")
+                        verified_devices = ", ".join(json_data.get("verified_devices", ["未知"]))
+                        author = json_data.get("author", "未知")
+                        sponsor_image_url = json_data.get("sponsor_image_url", "无")
+                        screenshot_url = json_data.get("screenshot_url", "无")
+                else:
+                    software_name = file_name
+                    screen_type = "未知"
+                    verified_devices = "未知"
+                    author = "未知"
+                    sponsor_image_url = "无"
+                    screenshot_url = "无"
+                
                 file_link = f"{url_prefix}{title}/{rpk_file.replace(' ', '%20')}"
-                readme_file.write(f"- [{file_name}.rpk](#{file_name.replace(' ', '-')})\n")
+                readme_file.write(f"- [{software_name}.rpk](#{software_name.replace(' ', '-')})\n")
             
             readme_file.write("\n")
             
             for rpk_file in rpk_files:
                 file_name = os.path.splitext(rpk_file)[0]
+                json_path = os.path.join(script_dir, "docs", os.path.relpath(rpk_directory, script_dir), f"{file_name}.json")
+                
+                if os.path.exists(json_path):
+                    with open(json_path, 'r', encoding='utf-8') as json_file:
+                        json_data = json.load(json_file)
+                        software_name = json_data.get("software_name", file_name)
+                        screen_type = json_data.get("screen_type", "未知")
+                        verified_devices = ", ".join(json_data.get("verified_devices", ["未知"]))
+                        author = json_data.get("author", "未知")
+                        sponsor_image_url = json_data.get("sponsor_image_url", "无")
+                        screenshot_url = json_data.get("screenshot_url", "无")
+                else:
+                    software_name = file_name
+                    screen_type = "未知"
+                    verified_devices = "未知"
+                    author = "未知"
+                    sponsor_image_url = "无"
+                    screenshot_url = "无"
+                
                 file_link = f"{url_prefix}{title}/{rpk_file.replace(' ', '%20')}"
-                readme_file.write(f"### {file_name}.rpk <a name=\"{file_name}\"></a>\n")
+                readme_file.write(f"### {software_name}.rpk <a name=\"{software_name}\"></a>\n")
                 readme_file.write(f"[下载地址]({file_link})\n\n")
+                readme_file.write(f"**屏幕类型**: {screen_type}\n\n")
+                readme_file.write(f"**已验证设备**: {verified_devices}\n\n")
+                readme_file.write(f"**作者**: {author}\n\n")
+                readme_file.write(f"**赞助图片地址**: {sponsor_image_url}\n\n")
+                readme_file.write(f"**效果图地址**: {screenshot_url}\n\n")
     except Exception as e:
         raise Exception(f"生成README文件失败: {readme_path}") from e
 
@@ -79,6 +123,37 @@ def rename_rpk_files(rpk_directory):
                     print(f"文件重命名: {old_file_path} -> {new_file_path}")
                 except Exception as e:
                     raise Exception(f"重命名文件失败: {old_file_path} -> {new_file_path}") from e
+
+def infer_screen_type(file_name):
+    if "方屏" in file_name or "方表" in file_name:
+        return "方屏"
+    elif "圆屏" in file_name or "圆表" in file_name:
+        return "圆屏"
+    elif "方屏/圆屏" in file_name or "方表/圆表" in file_name:
+        return "方屏/圆屏"
+    else:
+        return "未知"
+def generate_json_for_rpk(rpk_directory, script_dir):
+    for filename in os.listdir(rpk_directory):
+        if filename.endswith('.rpk'):
+            file_name = os.path.splitext(filename)[0]
+            json_path = os.path.join(script_dir, "docs", os.path.relpath(rpk_directory, script_dir), f"{file_name}.json")
+            
+            if not os.path.exists(json_path):
+                screen_type = infer_screen_type(file_name)
+                json_data = {
+                    "software_name": file_name,
+                    "screen_type": screen_type,
+                    "verified_devices": ["未知"],
+                    "author": "未知",
+                    "sponsor_image_url": "无",
+                    "screenshot_url": "无"
+                }
+                
+                os.makedirs(os.path.dirname(json_path), exist_ok=True)
+                with open(json_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(json_data, json_file, ensure_ascii=False, indent=4)
+                print(f"生成JSON文件: {json_path}")
 
 def explore_directories(base_directory, script_dir, categories):
     for root, dirs, files in os.walk(base_directory):
@@ -133,6 +208,7 @@ if __name__ == "__main__":
         for category in categories:
             generate_readme(category['rpk_directory'], category['readme_path'], category['title'], category['main_readme_link'])
             generate_rpk_list(category['rpk_directory'], category['list_path'])
+            generate_json_for_rpk(category['rpk_directory'], script_dir)  # 生成JSON文件
 
         generate_combined_rpk_list(categories, combined_list_path)
     except Exception as e:
