@@ -19,7 +19,9 @@
 
 **赞助图片地址**: 无
 
-**效果图地址**: 无
+![效果图](..\..\..\img\无.png)
+
+**MD5值**: 9b730be07c7fcff64a75b4d464ec0d75
 
 ### 多彩初音(圆表专属).rpk <a name="多彩初音(圆表专属)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/多彩初音(圆表专属).rpk)
@@ -32,7 +34,9 @@
 
 **赞助图片地址**: 无
 
-**效果图地址**: 无
+![效果图](..\..\..\img\无.png)
+
+**MD5值**: bf544667c955ca0986563e12b2df2779
 
 ### 彩球悦动·动态表盘.rpk <a name="彩球悦动·动态表盘"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/彩球悦动·动态表盘.rpk)
@@ -45,7 +49,9 @@
 
 **赞助图片地址**: 无
 
-**效果图地址**: 无
+![效果图](..\..\..\img\无.png)
+
+**MD5值**: 02fb3d5bbbf89412e71d92756c069936
 
 ### 米塔(方表).rpk <a name="米塔(方表)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/米塔(方表).rpk)
@@ -58,7 +64,9 @@
 
 **赞助图片地址**: 无
 
-**效果图地址**: 无
+![效果图](..\..\..\img\无.png)
+
+**MD5值**: a98ed7033c78570974a159ea2524fbaf
 
 ### 逍遥云间(李素裳-方表).rpk <a name="逍遥云间(李素裳-方表)"></a>
 [下载地址](https://github.akams.cn/https://github.com/tian1326/BlueOS-App-Library/raw/refs/heads/main/表盘/动态表盘/逍遥云间(李素裳-方表).rpk)
@@ -71,5 +79,7 @@
 
 **赞助图片地址**: 无
 
-**效果图地址**: 无
+![效果图](..\..\..\img\无.png)
+
+**MD5值**: ff382363d4a2334d0473e791788c70df
 
